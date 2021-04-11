@@ -35,6 +35,10 @@
 
 /* General Styles */
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: var(--clr-light);
     color: var(--clr-dark);
@@ -121,7 +125,7 @@ h3 { font-size: var(--fs-h3); }
 
 /* header */
 
-.header {
+header {
     display: flex;
     justify-content: space-between;
     padding: 1em;
@@ -131,7 +135,7 @@ h3 { font-size: var(--fs-h3); }
     max-width: 100px;
 }
 
-.nav {
+.my-nav {
     position: fixed;
     background: var(--clr-dark);
     color: var(--clr-light);
@@ -150,20 +154,20 @@ h3 { font-size: var(--fs-h3); }
     display: flex;
     height: 100%;
     flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    margin: 0;
-    padding: 0;
+    justify-content: space-evenly!important;
+    align-items: center!important;
+    /* margin: 0; */
+    /* padding: 0; */
 }
 
-.nav_link {
+.nav-link {
     color: inherit;
     font-weight: var(--fw-bold);
-    font-size: var(--fs-h3);
+    font-size: var(--fs-h2);
     text-decoration: none;
 }
 
-.nav_link:hover {
+.nav-link:hover {
     color: var(--clr-accent);
 }
 
@@ -179,6 +183,26 @@ h3 { font-size: var(--fs-h3); }
 
 }
 
+.nav-open .my-nav{
+    transform: translateX(0);
+}
+
+.nav-open .nav-toggle {
+    position: fixed;
+}
+
+.nav-open .hamburger {
+    transform: rotate(.625turn);
+}
+
+.nav-open .hamburger::before {
+    transform: rotate(90deg) translateX(-6px);
+}
+
+.nav-open .hamburger::after {
+    opacity: 0;
+}
+
 .hamburger {
     display: block;
     position: relative;
@@ -187,7 +211,7 @@ h3 { font-size: var(--fs-h3); }
 .hamburger,
 .hamburger::before,
 .hamburger::after {
-    background: var(--clr-dark);
+    background: var(--clr-accent);
     width: 2em;
     height: 3px;
     border-radius: 1em;
@@ -265,7 +289,7 @@ h3 { font-size: var(--fs-h3); }
 .my-services {
     /* background-color: var(--clr-dark); */
     background-color: #474646;
-    background-image: url(../assets/img/IMG_1376.JPG);
+    background-image: url(../assets/img/IMG_2143.JPEG);
     background-size: cover;
     background-position: 0;
     background-blend-mode: multiply;
@@ -342,9 +366,14 @@ h3 { font-size: var(--fs-h3); }
 /* Work */
 
 .work {
-    background-color: var(--clr-dark);
+    /* background-color: var(--clr-dark); */
     color: var(--clr-light);
     text-align: center;
+    background-color: #474646;
+    background-image: url(../assets/img/IMG_1376.JPG);
+    background-size: cover;
+    background-position: 0;
+    background-blend-mode: multiply;
 }
 
 .section-subtitle-work {
